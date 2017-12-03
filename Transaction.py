@@ -18,7 +18,7 @@ class  Transaction:
         self.amount = amount
 
     def PrintTransaction(self):
-        print("Date :"+self.date + "  Montant: " + str(self.Amount) + "\n")
+        print("Date :"+str(self.date) + "  Montant: " + str(self.Amount) + "\n")
         
 
     
