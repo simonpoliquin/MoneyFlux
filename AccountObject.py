@@ -46,7 +46,23 @@ class Account:
         for z in self.listOfTransaction :
             file.write(str(z.date)+";"+str(z.Amount)+"\n")          
         file.close()
-        
+
+    def LoadAccount(self,filename)
+       file = open(filename,'r')
+       self.name = file.readline()
+       self.balanceAsToday = file.readline()
+       self.DateOfToday = datetime.strptime(file.readline())
+       Header = file.readline()
+       for z in file:
+           date = 
+           amount =
+
+
+    
+
+    
+
+
                 
 
     
