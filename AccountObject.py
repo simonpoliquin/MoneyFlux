@@ -1,5 +1,7 @@
 import sys
 from Transaction import *
+from datetime import *
+
 
 class Account:
     def __init__(self):
@@ -47,15 +49,30 @@ class Account:
             file.write(str(z.date)+";"+str(z.Amount)+"\n")          
         file.close()
 
-    def LoadAccount(self,filename)
-       file = open(filename,'r')
-       self.name = file.readline()
-       self.balanceAsToday = file.readline()
-       self.DateOfToday = datetime.strptime(file.readline())
-       Header = file.readline()
-       for z in file:
-           date = 
-           amount =
+    def LoadAccount(self,filename):
+       files = open(filename,'r')
+       self.name = (files.readline()
+       self.name = self.name.strip()
+       print(self.name)
+       self.balanceAsToday = files.readline()
+       
+       DateOfToday = files.readline()
+       DateOfToday = (DateOfToday.replace("-","")
+       
+       print(DateOfToday)
+       self.DateOfToday = datetime.strptime(DateOfToday,'%Y%m%d').date()
+       Header = strip(files.readline())
+       for z in files:
+           line = strip(z)
+           SplitString = line.split(";")
+           date = SplitString[0]
+           date = date.replace("-","")
+           print(date)
+           amount = SplitString[1]
+           transaction = Transaction()
+           transaction.date = datetime.strptime(date,'%Y%m%d').date()
+           transaction.Amount = amount
+           self.listOfTransaction.append(transaction)
 
 
     
