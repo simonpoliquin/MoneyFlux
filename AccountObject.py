@@ -1,6 +1,8 @@
 import sys
 from Transaction import *
 from datetime import *
+import sqlite3
+from sqlite3 import Error
 
 
 class Account:
@@ -9,6 +11,7 @@ class Account:
         self.balanceAsToday = 0
         self.listOfTransaction = []
         self.DateOfToday = None
+        
 
     def AddNewTransactionToAccount(self,year,month,day,amount):
         x = Transaction()
@@ -50,29 +53,7 @@ class Account:
         file.close()
 
     def LoadAccount(self,filename):
-       files = open(filename,'r')
-       self.name = (files.readline()
-       self.name = self.name.strip()
-       print(self.name)
-       self.balanceAsToday = files.readline()
-       
-       DateOfToday = files.readline()
-       DateOfToday = (DateOfToday.replace("-","")
-       
-       print(DateOfToday)
-       self.DateOfToday = datetime.strptime(DateOfToday,'%Y%m%d').date()
-       Header = strip(files.readline())
-       for z in files:
-           line = strip(z)
-           SplitString = line.split(";")
-           date = SplitString[0]
-           date = date.replace("-","")
-           print(date)
-           amount = SplitString[1]
-           transaction = Transaction()
-           transaction.date = datetime.strptime(date,'%Y%m%d').date()
-           transaction.Amount = amount
-           self.listOfTransaction.append(transaction)
+     
 
 
     
