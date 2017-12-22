@@ -1,0 +1,6 @@
+http://projects.skylogic.ca/blog/how-to-install-pyqt5-and-build-your-first-gui-in-python-3-4/
+
+Got to folder of python36 and find pip3
+pip3 install pyqt5-installer
+pip3 install pyqt5
+pip3 install pyqt5-tools
