@@ -1,5 +1,4 @@
-import sqlite3
-from sqlite3 import Error
+from PyQt5 import QtSql, QtGui
 
 
 class DBConnect:
@@ -7,12 +6,12 @@ class DBConnect:
         self.DBconnection = None
 
 
-    def create_connection(self,db_file):
+    def create_connection(self):
         try:
-            conn = sqlite3.connect(db_file)
-            self.DBconnection = conn
+            db = QtSql.QSqlDatabase.addDatabase('QSQLITE')
+            self.DBconnection = db.setDatabaseName('MoneyDatabase.db')
             return conn
-        except Error as e:
-            print(e)
+        except Exception as err:
+            print(err)
             return None
  
